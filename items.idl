@@ -1,7 +1,7 @@
-titanium
-copper ore
-copper wire: 2 copper ore
-silver ore
+titanium (titanium)
+copper ore (copperore)
+copper wire (copperwire): 2 copper ore
+silver ore (silver)
 fabricator: table coral sample, titanium, gold
 radio: titanium, copper ore
 medical kit fabricator: computer chip, fiber mesh, silver ore, titanium
@@ -19,6 +19,8 @@ synthetic fibers: benzene, fiber mesh
 aerogel: gel sack, ruby
 polyaniline: gold, hydrochloric acid
 battery: 2 acid mushroom, copper ore
+acid mushroom (acidmushroom)
+deep shroom (whitemushroom)
 power cell: 2 battery, silicone rubber
 computer chip: 2 table coral sample, gold, copper wire
 wiring kit: 2 silver ore
@@ -30,7 +32,7 @@ multipurpose room: 6 titanium
 moonpool: 2 titanium ingot, lubricant, 2 lead
 reinforcement: lithium, 3 titanium
 bulkhead: 3 titanium, silicone rubber
-locker: quartz, 2 titanium
+locker(locker): quartz, 2 titanium
 battery charger: wiring kit, copper wire, titanium
 power cell charger: advanced wiring kit, 2 ruby, 2 titanium
 basic plant pot: 2 titanium
@@ -49,4 +51,6 @@ T compartment: 3 titanium
 X compartment: 3 titanium
 I Glass compartment: 2 glass
 L Glass compartment: 2 glass
-Vertical connector: 2 titanium
+Vertical connector (baseconnector): 2 titanium
+Bioreactor (basebioreactor): 3 titanium, wiring kit, lubricant
+Creature decoy (cyclopsdecoy): 3 titanium, wiring kit

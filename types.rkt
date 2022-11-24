@@ -6,5 +6,10 @@
 
 (provide (all-defined-out))
 
-(struct/contract ingredient ([quantity exact-nonnegative-integer?] [item string?]) #:transparent)
-(struct/contract recipe ([item string?] [ingredients (listof ingredient?)]) #:transparent)
+(struct/contract ingredient ([quantity exact-nonnegative-integer?]
+                             [item string?])
+                 #:transparent)
+(struct/contract recipe ([item string?]
+                         [spawn-id (or/c #f string?)]
+                         [ingredients (listof ingredient?)])
+                 #:transparent)

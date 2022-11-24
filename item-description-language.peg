@@ -1,9 +1,11 @@
 #lang peg
 (require "private/lib.rkt" "types.rkt");
 nls < [\n]+;
-items <- i1:item (nls i2:items)? -> (if i2 (cons i1 i2) (list i1));
-item <- n:name (' '* ':' ' '+ ings:ingredients)? -> (recipe n (or ings '()));
-name <- s:[A-Za-z0-9 ]+ -> (string-capitalize (string-trim s));
+items <- nls? i1:item (nls i2:items)? nls? -> (if i2 (cons i1 i2) (list i1));
+item <- n:name (' '* sid:spawn-id ' '*)? (' '* ':' ' '+ ings:ingredients)?
+     -> (recipe n sid (or ings '()));
+spawn-id <- '(' s:[a-z]+ ')' -> s;
+name <- ' '* s:[A-Za-z0-9 ]+ ' '* -> (string-capitalize (string-trim s));
 ingredient <- (n:[0-9]+' ')? ing:names -> (ingredient (match n [#f 1] [_ (string->number n)]) ing);
 ingredients <- i1:ingredient (',' ' '* ings:ingredients)? -> (cons i1 (or ings '()));
 names <- n1:name -> n1;

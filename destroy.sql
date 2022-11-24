@@ -1,3 +1,5 @@
+DROP VIEW IF EXISTS recipe;
+
 DROP FUNCTION IF EXISTS nameof;
 
 DROP TABLE IF EXISTS ingredient;

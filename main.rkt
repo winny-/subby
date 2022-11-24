@@ -32,7 +32,7 @@
   (when destroy?
     (for ([stmt (sql->statements (file->string DESTROY-PATH))])
       (query-exec (*db*) stmt)))
-  (for ([stmt  (sql->statements (file->string SCHEMA-PATH))])
+  (for ([stmt (sql->statements (file->string SCHEMA-PATH))])
     (query-exec (*db*) stmt)))
 
 (define items (peg items (file->string "items.idl")))
@@ -41,7 +41,7 @@
   (set/c string?)
   (for/fold ([acc (set)])
             ([item items])
-    (match-define (recipe name ingredients) item)
+    (match-define (recipe name spawn-id ingredients) item)
     (set-union
      (set-add acc name)
      (for/set ([ing ingredients])
@@ -56,6 +56,7 @@
 (define (q1 stmt . args) (apply query-value (*db*) stmt args))
 (define (qx stmt . args) (apply query-exec (*db*) stmt args))
 
+;;; FIXME insert spawn_id values if present.
 (define/contract (insert-ingredents [ings all-ingredients])
   (->* () ((set/c string?)) void?)
   (for ([ing ings])

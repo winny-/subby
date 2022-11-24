@@ -12,7 +12,7 @@ docker-compose up
 
 In a racket session:
 
-racket```
+```racket
 (require "main.rkt")
 (enter! "main.rkt")
 (boot)
